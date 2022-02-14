@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: odh-dashboard
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      deployment: odh-dashboard
+  template:
+    metadata:
+      labels:
+        deployment: odh-dashboard
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - odh-dashboard
+                topologyKey: topology.kubernetes.io/zone
+      serviceAccount: odh-dashboard
+      containers:
+      - name: odh-dashboard
+        image: quay.io/opendatahub/odh-dashboard:v1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: 200m
+            memory: 100Mi
+          limits:
+            cpu: 400m
+            memory: 400Mi
+        livenessProbe:
+          httpGet:
+            path: /api/status
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 30
+          timeoutSeconds: 15
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /api/status
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 30
+          timeoutSeconds: 15
+          periodSeconds: 30
+          successThreshold: 1
+          failureThreshold: 3

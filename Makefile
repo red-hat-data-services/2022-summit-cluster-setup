@@ -12,11 +12,12 @@ endif
 
 ##################################
 
-deploy: serving kfnbc dashboard
+deploy: serving kfnbc ui
+undeploy: undeploy-serving undeploy-kfnbc undeploy-ui
 
 ##################################
 
-.PHONY: login dashboard dashboard-undeploy kfnbc kfnbc-undeploy serving serving-undeploy
+.PHONY: login ui undeploy-ui kfnbc undeploy-kfnbc serving undeploy-serving
 
 login:
 ifdef OC_TOKEN
@@ -29,18 +30,18 @@ endif
 
 ##################################
 
-dashboard:
-	./dashboard/deploy.sh
+ui:
+	./ui/deploy.sh
 
-dashboard-undeploy:
-	./dashboard/undeploy.sh
+undeploy-ui:
+	./ui/undeploy.sh
 
 ##################################
 
 kfnbc:
 	./kfnbc/deploy.sh
 
-kfnbc-undeploy:
+undeploy-kfnbc:
 	./kfnbc/undeploy.sh
 
 ##################################
@@ -48,7 +49,7 @@ kfnbc-undeploy:
 serving:
 	./serving/deploy.sh
 
-serving-undeploy:
+undeploy-serving:
 	./serving/undeploy.sh
 
 ##################################
