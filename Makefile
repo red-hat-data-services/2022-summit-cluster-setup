@@ -12,12 +12,12 @@ endif
 
 ##################################
 
-deploy: serving kfnbc ui
-undeploy: undeploy-serving undeploy-kfnbc undeploy-ui
+deploy: serving notebooks ui
+undeploy: undeploy-serving undeploy-notebooks undeploy-ui
 
 ##################################
 
-.PHONY: login ui undeploy-ui kfnbc undeploy-kfnbc serving undeploy-serving
+.PHONY: login ui undeploy-ui notebooks undeploy-notebooks serving undeploy-serving
 
 login:
 ifdef OC_TOKEN
@@ -38,11 +38,11 @@ undeploy-ui:
 
 ##################################
 
-kfnbc:
-	./kfnbc/deploy.sh
+notebooks:
+	./notebooks/deploy.sh
 
-undeploy-kfnbc:
-	./kfnbc/undeploy.sh
+undeploy-notebooks:
+	./notebooks/undeploy.sh
 
 ##################################
 
