@@ -9,3 +9,4 @@ oc project ${DASHBOARD_PROJECT} 2> /dev/null || oc new-project ${DASHBOARD_PROJE
 oc project
 
 oc apply -k "${DIR}/odh-dashboard"
+oc apply -f "${DIR}/misc/consolelink.yaml"

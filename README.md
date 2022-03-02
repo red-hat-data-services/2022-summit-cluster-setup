@@ -2,7 +2,7 @@
 
 ## Requirements
 
-* OpenShift Cluster 4.6+
+* OpenShift Cluster 4.9+
 * OpenShift CLI (`oc`)
 * Make
 
