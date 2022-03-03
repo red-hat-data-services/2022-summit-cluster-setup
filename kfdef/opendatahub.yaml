@@ -1,0 +1,30 @@
+kind: KfDef
+apiVersion: kfdef.apps.kubeflow.org/v1
+metadata:
+  name: opendatahub
+  namespace: odh
+spec:
+  applications:
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: odh-common
+      name: odh-common
+    - kustomizeConfig:
+        overlays:
+          - authentication
+        repoRef:
+          name: manifests
+          path: odh-dashboard
+      name: odh-dashboard
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: model-mesh
+      name: model-mesh
+  repos:
+    - name: kf-manifests
+      uri: >-
+        https://github.com/opendatahub-io/manifests/tarball/v1.4.0-rc.2-openshift
+    - name: manifests
+      uri: 'https://github.com/cfchase/odh-manifests/tarball/prototype'
