@@ -1,8 +1,7 @@
-kind: KfDef
 apiVersion: kfdef.apps.kubeflow.org/v1
+kind: KfDef
 metadata:
   name: opendatahub
-  namespace: odh
 spec:
   applications:
     - kustomizeConfig:
@@ -17,6 +16,18 @@ spec:
           name: manifests
           path: odh-dashboard
       name: odh-dashboard
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: notebook-controller/controller
+      name: notebook-controller
+    - kustomizeConfig:
+        overlays:
+          - additional
+        repoRef:
+          name: manifests
+          path: jupyterhub/notebook-images
+      name: notebook-images
     - kustomizeConfig:
         repoRef:
           name: manifests
