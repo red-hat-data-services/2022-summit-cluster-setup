@@ -1,5 +1,0 @@
-#### Motivation
-
-#### Modifications
-
-#### Result

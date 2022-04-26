@@ -30,10 +30,10 @@ endif
 
 ##################################
 
-ui:
+deploy:
 	./ui/deploy.sh
 
-undeploy-ui:
+undeploy:
 	./ui/undeploy.sh
 
 ##################################
