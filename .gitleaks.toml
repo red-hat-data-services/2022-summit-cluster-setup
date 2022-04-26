@@ -1,8 +1,7 @@
 [allowlist]
   description = "Allowlist"
   paths = [
-    '''serving/modelmesh-serving/fvt/testdata''',
   ]
   files = [
-    '''serving/modelmesh-serving/config/dependencies/fvt\.yaml''',
+    '''storage/sample-minio.yaml''',
   ]
