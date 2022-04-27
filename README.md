@@ -31,20 +31,4 @@ After setting the authentications in your `.env.local` file. You can then use `m
 make login deploy
 ```
 
-### 2. Deploy the Serving component
 
-```shell
-make serving
-```
-
-### 3. Deploy Kubeflow Notebook Controller
-
-```shell
-make kfnbc
-```
-
-### 4. Deploy the Dashboard
-
-```shell
-make dashboard
-```
