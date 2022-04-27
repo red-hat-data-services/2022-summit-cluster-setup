@@ -1,0 +1,84 @@
+---
+apiVersion: serving.kserve.io/v1alpha1
+kind: Predictor
+metadata:
+  name: example-keras-mnist
+spec:
+  modelType:
+    name: keras
+  path: keras/mnist.h5
+  storage:
+    s3:
+      secretKey: summitDemo
+#---
+#apiVersion: serving.kserve.io/v1alpha1
+#kind: Predictor
+#metadata:
+#  name: example-lightgbm-mushroom
+#spec:
+#  modelType:
+#    name: lightgbm
+#  path: lightgbm/mushroom.bst
+#  storage:
+#    s3:
+#      secretKey: summitDemo
+---
+apiVersion: serving.kserve.io/v1alpha1
+kind: Predictor
+metadata:
+  name: example-sklearn-mnist-svm
+spec:
+  modelType:
+    name: sklearn
+  path: sklearn/mnist-svm.joblib
+  storage:
+    s3:
+      secretKey: summitDemo
+#---
+#apiVersion: serving.kserve.io/v1alpha1
+#kind: Predictor
+#metadata:
+#  name: example-onnx-mnist
+#spec:
+#  modelType:
+#    name: onnx
+#  path: onnx/mnist.onnx
+#  storage:
+#    s3:
+#      secretKey: summitDemo
+#---
+#apiVersion: serving.kserve.io/v1alpha1
+#kind: Predictor
+#metadata:
+#  name: example-pytorch-cifar
+#spec:
+#  modelType:
+#    name: pytorch
+#  path: pytorch/cifar
+#  storage:
+#    s3:
+#      secretKey: summitDemo
+#---
+#apiVersion: serving.kserve.io/v1alpha1
+#kind: Predictor
+#metadata:
+#  name: example-tensorflow-mnist
+#spec:
+#  modelType:
+#    name: tensorflow
+#  path: tensorflow/mnist.savedmodel
+#  storage:
+#    s3:
+#      secretKey: summitDemo
+#---
+#apiVersion: serving.kserve.io/v1alpha1
+#kind: Predictor
+#metadata:
+#  name: example-xgboost-mushroom
+#spec:
+#  modelType:
+#    name: xgboost
+#  path: xgboost/mushroom.json
+#  storage:
+#    s3:
+#      secretKey: summitDemo

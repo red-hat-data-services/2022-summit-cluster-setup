@@ -12,13 +12,11 @@ endif
 
 ##################################
 
-deploy: serving notebooks ui
-undeploy: undeploy-serving undeploy-notebooks undeploy-ui
-
 ##################################
 
-.PHONY: login ui undeploy-ui notebooks undeploy-notebooks serving undeploy-serving
+#.PHONY: login deploy undeploy
 
+.PHONY: login
 login:
 ifdef OC_TOKEN
 	$(info **** Using OC_TOKEN for login ****)
@@ -30,26 +28,11 @@ endif
 
 ##################################
 
+.PHONY: deploy
 deploy:
-	./ui/deploy.sh
+	./kfdef/deploy.sh
 
 undeploy:
-	./ui/undeploy.sh
-
-##################################
-
-notebooks:
-	./notebooks/deploy.sh
-
-undeploy-notebooks:
-	./notebooks/undeploy.sh
-
-##################################
-
-serving:
-	./serving/deploy.sh
-
-undeploy-serving:
-	./serving/undeploy.sh
+	./kfdef/undeploy.sh
 
 ##################################

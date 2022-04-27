@@ -3,5 +3,6 @@
   paths = [
   ]
   files = [
-    '''storage/sample-minio.yaml''',
+    '''storage/minio/sample-minio.yaml''',
+    '''serving/example/secret.yaml''',
   ]
