@@ -1,9 +1,4 @@
 ---
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: odh
----
 apiVersion: kfdef.apps.kubeflow.org/v1
 kind: KfDef
 metadata:
@@ -27,26 +22,26 @@ spec:
           name: manifests
           path: model-mesh
       name: model-mesh
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: grafana/cluster
-      name: grafana-cluster
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: grafana/grafana
-      name: grafana-instance
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: prometheus/cluster
-      name: prometheus-cluster
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: prometheus/operator
-      name: prometheus-operator
+#    - kustomizeConfig:
+#        repoRef:
+#          name: manifests
+#          path: grafana/cluster
+#      name: grafana-cluster
+#    - kustomizeConfig:
+#        repoRef:
+#          name: manifests
+#          path: grafana/grafana
+#      name: grafana-instance
+#    - kustomizeConfig:
+#        repoRef:
+#          name: manifests
+#          path: prometheus/cluster
+#      name: prometheus-cluster
+#    - kustomizeConfig:
+#        repoRef:
+#          name: manifests
+#          path: prometheus/operator
+#      name: prometheus-operator
     - kustomizeConfig:
         repoRef:
           name: manifests
@@ -62,3 +57,4 @@ spec:
   repos:
     - name: manifests
       uri: 'https://github.com/cfchase/odh-manifests/tarball/prototype'
+

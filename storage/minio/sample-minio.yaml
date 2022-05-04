@@ -36,6 +36,64 @@ spec:
           value: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
       image: kserve/modelmesh-minio-dev-examples:latest
       name: minio
+#---
+#apiVersion: apps/v1
+#kind: StatefulSet
+#metadata:
+#  name: minio
+#spec:
+#  selector:
+#    matchLabels:
+#      app: minio
+#  serviceName: "minio"
+#  #  replicas: 1
+#  #  minReadySeconds: 10 # by default is 0
+#  template:
+#    metadata:
+#      labels:
+#        app: minio
+#      name: minio
+#    spec:
+#      containers:
+#        - args:
+#            - server
+#            # - /data
+#            - /data1
+#          env:
+#            - name: MINIO_ACCESS_KEY
+#              value: AKIAIOSFODNN7EXAMPLE
+#            - name: MINIO_SECRET_KEY
+#              value: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+#          image: kserve/modelmesh-minio-dev-examples:latest
+#          name: minio
+#---
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: minio
+#spec:
+#  selector:
+#    matchLabels:
+#      app: minio
+#  replicas: 1
+#  template:
+#    metadata:
+#      labels:
+#        app: minio
+#      name: minio
+#    spec:
+#      containers:
+#        - args:
+#            - server
+#            # - /data
+#            - /data1
+#          env:
+#            - name: MINIO_ACCESS_KEY
+#              value: AKIAIOSFODNN7EXAMPLE
+#            - name: MINIO_SECRET_KEY
+#              value: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+#          image: kserve/modelmesh-minio-dev-examples:latest
+#          name: minio
 ---
 apiVersion: v1
 kind: Secret
