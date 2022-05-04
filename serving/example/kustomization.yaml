@@ -5,5 +5,5 @@ resources:
 - ./secret.yaml
 - ./runtimes.yaml
 - ./predictors.yaml
-namespace: modelmesh-examples2
+namespace: modelmesh-examples
 

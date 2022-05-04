@@ -1,0 +1,40 @@
+---
+apiVersion: core.opendatahub.io/v1alpha
+kind: OdhConfig
+metadata:
+  name: odhconfig
+spec:
+  notebookSizes:
+    - name: Default
+      resources:
+        requests:
+          memory: 24Gi
+          cpu: '3'
+        limits:
+          memory: 24Gi
+          cpu: '6'
+    - name: Small
+      resources:
+        requests:
+          memory: 8Gi
+          cpu: '1'
+        limits:
+          memory: 8Gi
+          cpu: '2'
+    - name: Medium
+      resources:
+        requests:
+          memory: 24Gi
+          cpu: '3'
+        limits:
+          memory: 24Gi
+          cpu: '6'
+    - name: Large
+      resources:
+        requests:
+          memory: 56Gi
+          cpu: '7'
+        limits:
+          memory: 56Gi
+          cpu: '14'
+
